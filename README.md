@@ -1,5 +1,5 @@
-# TrajLoc: Trajectory-Attention Localization for Multi-Object Motion Control
+# TrajLoc: Trajectory-Attention Localization for <br> Multi-Object Motion Control
 
-[![Project Page](https://img.shields.io/badge/Project-Page-blue?style=for-the-badge)](https://sela-omer.github.io/traj-loc/)
+[![Project Page](https://img.shields.io/badge/Project%20Page-2196F3?style=flat&logo=googlechrome&logoColor=white)](https://sela-omer.github.io/traj-loc/) [![arXiv](https://img.shields.io/badge/arXiv-coming%20soon-b31b1b?style=flat&logo=arxiv&logoColor=white)](https://sela-omer.github.io/traj-loc/) [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-coming%20soon-FF9D00?style=flat&logo=huggingface&logoColor=white)](https://sela-omer.github.io/traj-loc/) [![Code](https://img.shields.io/badge/Code-coming%20soon-181717?style=flat&logo=github&logoColor=white)](https://sela-omer.github.io/traj-loc/)
 
 ## 🚧 Code coming soon
