@@ -11,6 +11,8 @@
   <meta property="og:description" content="Per-object attention localization for multi-object motion control in image-to-video diffusion, scaling to scenes with up to 20 interacting objects.">
   <meta property="og:type" content="website">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
+
   <style>
     :root {
       --fg: #1a1a1a;
@@ -29,37 +31,26 @@
       line-height: 1.6;
     }
     .container { max-width: 820px; margin: 0 auto; padding: 0 20px; }
-    header { padding: 64px 0 32px; text-align: center; border-bottom: 1px solid var(--border); }
+    header { padding: 64px 0 32px; text-align: center; }
     h1 { font-size: 2rem; line-height: 1.25; margin: 0 0 18px; font-weight: 700; }
     .authors { font-size: 1.05rem; margin: 0 0 6px; }
-    .affil { color: var(--muted); font-size: 0.95rem; margin: 0; }
     .links { margin: 28px 0 4px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
     .btn {
-      display: inline-block; padding: 9px 18px; border-radius: 999px;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 18px; border-radius: 999px;
       border: 1px solid var(--border); color: var(--fg); text-decoration: none;
       font-size: 0.95rem; font-weight: 500; transition: background .15s, border-color .15s;
     }
     .btn:hover { background: #f3f4f6; }
+    .btn svg { width: 18px; height: 18px; display: block; }
+    .btn i { font-size: 18px; line-height: 1; }
     .btn[aria-disabled="true"] { color: var(--muted); cursor: default; opacity: .65; }
     .btn[aria-disabled="true"]:hover { background: transparent; }
-    section { padding: 40px 0; border-bottom: 1px solid var(--border); }
-    h2 { font-size: 1.3rem; margin: 0 0 16px; }
-    .tldr {
-      background: #f8fafc; border: 1px solid var(--border); border-radius: 10px;
-      padding: 16px 20px; margin: 28px 0 0; font-size: 1.02rem;
-    }
     .banner {
-      margin: 28px 0; padding: 18px 20px; border-radius: 10px;
+      margin: 36px 0; padding: 18px 20px; border-radius: 10px;
       background: #fff7ed; border: 1px solid #fed7aa; color: #9a3412;
-      text-align: center; font-weight: 600;
+      text-align: center; font-weight: 600; font-size: 1.05rem;
     }
-    abstract, .abstract { display: block; text-align: justify; }
-    pre {
-      background: #f8fafc; border: 1px solid var(--border); border-radius: 10px;
-      padding: 16px; overflow-x: auto; font-size: 0.85rem; line-height: 1.5;
-    }
-    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    footer { padding: 32px 0 64px; text-align: center; color: var(--muted); font-size: 0.9rem; }
     @media (max-width: 600px) { h1 { font-size: 1.5rem; } header { padding: 40px 0 24px; } }
   </style>
 </head>
@@ -72,58 +63,17 @@
         Michael Rotman &nbsp;&middot;&nbsp; Sagie Benaim &nbsp;&middot;&nbsp; Avi Ben-Cohen
       </p>
       <div class="links">
-        <a class="btn" aria-disabled="true" href="#">Paper (coming soon)</a>
-        <a class="btn" href="https://github.com/Sela-Omer/traj-loc">Code</a>
-        <a class="btn" aria-disabled="true" href="#">Video (coming soon)</a>
+        <a class="btn" href="https://github.com/Sela-Omer/traj-loc">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          Code
+        </a>
+        <a class="btn" aria-disabled="true" href="#">
+          <i class="ai ai-arxiv" aria-hidden="true"></i>
+          arXiv (coming soon)
+        </a>
       </div>
+      <div class="banner">🚧 Project page under construction</div>
     </div>
   </header>
-
-  <div class="container">
-
-    <div class="banner">🚧 Project page under construction — full results, videos, and code coming soon.</div>
-
-    <section>
-      <h2>Overview</h2>
-      <p class="abstract">
-        Controlling the motion of multiple objects in image-to-video (I2V) generation requires
-        preserving object identities while enforcing adherence to distinct target trajectories.
-        This becomes particularly challenging as the number of objects increases and their paths
-        intersect or occlude one another. Existing approaches entangle multiple trajectories within
-        a shared, dense conditioning signal, making object-level correspondence difficult to preserve
-        in crowded scenes. We depart from this paradigm and enforce a strict, per-object spatial
-        constraint that isolates instances independently. Our method, TrajLoc, achieves this directly
-        within the attention layers by substituting the cross-attention weights of each object token
-        with a Gaussian heatmap centered on its target location at every frame. The same per-object
-        token interface carries trajectory and depth through a learned embedding and preserves identity
-        by encoding first-frame appearance in place of an object token. Evaluations across six datasets,
-        featuring up to 20 simultaneously controlled objects and out-of-distribution real-world scenes,
-        demonstrate that our method consistently improves both visual fidelity and trajectory adherence.
-        Applied to two architecturally distinct backbones (CogVideoX-5B and WaN&nbsp;2.1-14B), our approach
-        achieves average gains of +4.3&nbsp;dB PSNR and a 51% reduction in trajectory end-point error
-        compared to the strongest baselines.
-      </p>
-      <div class="tldr">
-        <strong>TL;DR:</strong> Multi-object motion control in image-to-video diffusion via per-object
-        attention localization with Gaussian trajectory heatmaps and dedicated text tokens for trajectory
-        and appearance, scaling to scenes with up to 20 interacting objects.
-      </div>
-    </section>
-
-    <section>
-      <h2>Citation</h2>
-<pre><code>@misc{sela2026trajloc,
-  title  = {TrajLoc: Trajectory-Attention Localization for Multi-Object Motion Control},
-  author = {Sela, Omer and Huberman-Spiegelglas, Inbar and Rotman, Michael
-            and Benaim, Sagie and Ben-Cohen, Avi},
-  year   = {2026}
-}</code></pre>
-    </section>
-
-  </div>
-
-  <footer>
-    <div class="container">&copy; 2026 The TrajLoc Authors</div>
-  </footer>
 </body>
 </html>
