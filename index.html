@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrajLoc: Trajectory-Attention Localization for Multi-Object Motion Control</title>
+  <meta name="description" content="Multi-object motion control in image-to-video diffusion via per-object attention localization with Gaussian trajectory heatmaps and dedicated text tokens for trajectory and appearance.">
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="TrajLoc: Trajectory-Attention Localization for Multi-Object Motion Control">
+  <meta property="og:description" content="Per-object attention localization for multi-object motion control in image-to-video diffusion, scaling to scenes with up to 20 interacting objects.">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
+
+  <style>
+    :root {
+      --fg: #1a1a1a;
+      --muted: #666;
+      --bg: #ffffff;
+      --accent: #2563eb;
+      --border: #e5e7eb;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--fg);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    .container { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+    header { padding: 64px 0 32px; text-align: center; }
+    h1 { font-size: 2rem; line-height: 1.25; margin: 0 0 18px; font-weight: 700; }
+    .authors { font-size: 1.05rem; margin: 0 0 6px; }
+    .links { margin: 28px 0 4px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 18px; border-radius: 999px;
+      border: 1px solid var(--border); color: var(--fg); text-decoration: none;
+      font-size: 0.95rem; font-weight: 500; transition: background .15s, border-color .15s;
+    }
+    .btn:hover { background: #f3f4f6; }
+    .btn svg { width: 18px; height: 18px; display: block; }
+    .btn i { font-size: 18px; line-height: 1; }
+    .btn[aria-disabled="true"] { color: var(--muted); cursor: default; opacity: .65; }
+    .btn[aria-disabled="true"]:hover { background: transparent; }
+    .banner {
+      margin: 36px 0; padding: 18px 20px; border-radius: 10px;
+      background: #fff7ed; border: 1px solid #fed7aa; color: #9a3412;
+      text-align: center; font-weight: 600; font-size: 1.05rem;
+    }
+    @media (max-width: 600px) { h1 { font-size: 1.5rem; } header { padding: 40px 0 24px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>TrajLoc: Trajectory-Attention Localization for<br>Multi-Object Motion Control</h1>
+      <p class="authors">
+        Omer Sela &nbsp;&middot;&nbsp; Inbar Huberman-Spiegelglas &nbsp;&middot;&nbsp;
+        Michael Rotman &nbsp;&middot;&nbsp; Sagie Benaim &nbsp;&middot;&nbsp; Avi Ben-Cohen
+      </p>
+      <div class="links">
+        <a class="btn" aria-disabled="true" href="#">
+          <i class="ai ai-arxiv" aria-hidden="true"></i>
+          arXiv (coming soon)
+        </a>
+        <a class="btn" aria-disabled="true" href="#">
+          <span aria-hidden="true">&#129303;</span>
+          Hugging Face (coming soon)
+        </a>
+        <a class="btn" href="https://github.com/Sela-Omer/traj-loc">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          Code (coming soon)
+        </a>
+      </div>
+      <div class="banner">🚧 Project page under construction</div>
+    </div>
+  </header>
+</body>
+</html>
