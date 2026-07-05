@@ -1,0 +1,57 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- TrajLoc mark: a teal (#00a3b4) trajectory that traces a full symmetric
+       "smile" low in the square, then shoots smoothly up into a white crosshair
+       target in the top-right corner. Deep-teal square background. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#013b45"/>
+      <stop offset="1" stop-color="#00151a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+
+  <!-- trajectory: a filled crescent so the ends taper to sharp Prime-Video-style
+       points (a uniform stroke can't). A symmetric bowl smile low in the square,
+       whose right end tapers up into the target. Left tip and target tip both
+       sharp; belly thick and centered. -->
+  <path d="M 14 46
+           C 22 55, 42 55, 50 46
+           C 43 59, 21 59, 14 46 Z"
+        fill="#00a3b4" stroke="#00a3b4" stroke-width="1.4"
+        stroke-linejoin="round"/>
+
+  <!-- Play on the Amazon arrow: the smile's right end flicks into an arrowhead,
+       built from two curved+tapered barbs off the tip (filled so they taper to
+       points): one above the mouth, one below. -->
+  <!-- one solid rounded arrowhead: two curved+tapered barbs sharing the vertex
+       at (55,40), both the same thickness, rounded joins/caps. -->
+  <path d="M 42 43.8
+           C 45 42.4, 50 41.8, 55 40
+           C 55.3 45, 53.4 50.2, 49.8 53.2
+           C 52.8 49.2, 54.3 44.6, 54.6 42.2
+           C 50 42.2, 45 42.6, 42 43.8 Z"
+        fill="#00a3b4" stroke="#00a3b4" stroke-width="1.4"
+        stroke-linejoin="round" stroke-linecap="round" />
+
+  <!-- dashed "treasure-map" leader: smoothly extends the top barb off to the
+       left, swings through an S (crossing the x-center to the left, then back
+       across to the right), and rises into the target's bottom-left. -->
+  <path d="M 43 43.4
+           C 37 46, 29 45.5, 26 40
+           C 22 33.5, 29 30, 35 29.5
+           C 41 30, 45 25, 47 19"
+        fill="none" stroke="#00a3b4" stroke-width="2"
+        stroke-linecap="round" stroke-dasharray="2.2 3" opacity="0.9" />
+
+  <!-- localization target: white crosshair in the top-right corner, four ticks
+       (top/bottom/left/right). Ring + solid core. -->
+  <g stroke="#ffffff" stroke-width="1.9" stroke-linecap="round">
+    <line x1="47" y1="3"  x2="47" y2="8"/>
+    <line x1="47" y1="30.5" x2="47" y2="35"/>
+    <line x1="32" y1="19" x2="37" y2="19"/>
+    <line x1="57" y1="19" x2="62" y2="19"/>
+  </g>
+  <circle cx="47" cy="19" r="9.5" fill="none" stroke="#ffffff" stroke-width="2.4"/>
+  <circle cx="47" cy="19" r="3.8" fill="#ffffff"/>
+</svg>
