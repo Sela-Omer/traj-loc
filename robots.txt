@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sela-omer.github.io/traj-loc/sitemap.xml
