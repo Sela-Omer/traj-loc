@@ -1,0 +1,51 @@
+# TrajLoc on Wan2.1 I2V-14B (480p): the configuration of the released model.
+#
+#   trajloc train wan --config configs/wan.yaml --run_name <name>
+#
+# Every setting is stated here (a missing or unknown key is an error). Paths
+# are relative to the repository root. model_path is where the base model,
+# Wan-AI/Wan2.1-I2V-14B-480P, is downloaded on first use (about 77 GB). The
+# top-level keys are the Wan trainer's; `trajloc` is TrajLoc's section.
+
+model_path: "checkpoints/wan2.1-i2v-14b-480p"
+seed: 42
+
+# Optimization (AdamW)
+train_steps: 50001
+batch_size: 2
+gradient_accumulation_steps: 1
+learning_rate: 2.0e-4
+beta1: 0.9
+beta2: 0.999
+epsilon: 1.0e-8
+weight_decay: 0.01
+max_grad_norm: 1.0
+gradient_checkpointing: true
+
+# LoRA on the DiT attention projections
+rank: 64
+target_modules: ["q", "k", "v", "o"]
+
+# Checkpoints and data loading. Every checkpoint is kept (about 0.4 GB each); a
+# Wan run can't be resumed.
+checkpointing_steps: 500
+num_workers: 4
+pin_memory: true
+
+trajloc:
+  video_size: [480, 720]           # height, width
+  num_frames: 49
+  # Appearance encoder: one token per object, from the frame-0 latent
+  appearance_latent_size: [60, 90]
+  appearance_latent_depth: 8
+  appearance_hidden_channels: 64
+  appearance_token_std: 0.0734     # UMT5-XXL's token std
+  # Attention localization, in all 40 blocks
+  heatmap_sigma: 30.0              # pixels (fixed)
+  # Loss: (1 - w) * mse + w * box-masked mse
+  box_loss_weight: 0.5
+  box_mask:
+    style: tight                   # each box at its own latent frame
+  training_set:
+    name: sav
+    root: "runs/preprocess/sav"

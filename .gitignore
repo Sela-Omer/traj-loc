@@ -1,0 +1,41 @@
+# Local data, weights and outputs.
+/datasets/
+/data/*
+!/data/.gitkeep
+/checkpoints/*
+!/checkpoints/.gitkeep
+/runs/*
+!/runs/.gitkeep
+
+# Python.
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Editors / OS.
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+
+# Virtual envs (scripts/env/install.sh makes .venv/).
+.venv/
+.venv-*/
+venv/
+
+# Large binaries never belong in the repository.
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.npy
+*.npz
+*.mp4
+*.parquet
+*.tar
+*.tar.gz
+*.zip
+*.whl

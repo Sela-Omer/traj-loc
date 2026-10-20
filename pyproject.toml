@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trajloc"
+dynamic = ["version"]
+description = "TrajLoc: trajectory-attention localization for multi-object motion control in image-to-video generation"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.10,<3.11"  # the lock is for CPython 3.10
+authors = [
+    { name = "Omer Sela" },
+    { name = "Inbar Huberman-Spiegelglas" },
+    { name = "Michael Rotman" },
+    { name = "Sagie Benaim" },
+    { name = "Avi Ben-Cohen" },
+]
+
+# The environment is the pinned lock, requirements/trajloc.txt (installed by
+# scripts/env/install.sh, which installs this package with --no-deps). Listed
+# here: what importing trajloc needs. The backbone libraries (diffusers,
+# transformers, SAM 2) and OpenCV come from the lock; DiffSynth-Studio, CogVideo
+# and Wan2.1 are the submodules in external/.
+dependencies = [
+    "av",
+    "numpy",
+    "pillow",
+    "pyyaml",
+    "safetensors",
+    "torch",
+]
+
+[project.scripts]
+trajloc = "trajloc.cli.app:main"
+
+[project.urls]
+Repository = "https://github.com/Sela-Omer/traj-loc"
+Paper = "https://arxiv.org/abs/2607.00861"
+"Project page" = "https://sela-omer.github.io/traj-loc/"
+
+[tool.setuptools.dynamic]
+version = { attr = "trajloc.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,9 @@
+[submodule "external/Wan2.1"]
+	path = external/Wan2.1
+	url = https://github.com/Wan-Video/Wan2.1.git
+[submodule "external/CogVideo"]
+	path = external/CogVideo
+	url = https://github.com/zai-org/CogVideo.git
+[submodule "external/DiffSynth-Studio"]
+	path = external/DiffSynth-Studio
+	url = https://github.com/modelscope/DiffSynth-Studio.git

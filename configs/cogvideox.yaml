@@ -1,0 +1,60 @@
+# TrajLoc on CogVideoX-5B I2V: the configuration of the released model.
+#
+#   trajloc train cogvideox --config configs/cogvideox.yaml --run_name <name>
+#
+# Every setting is stated here (a missing or unknown key is an error). Paths
+# are relative to the repository root. The top-level keys are the CogVideoX
+# LoRA trainer's; `trajloc` is TrajLoc's section.
+
+model_path: "zai-org/CogVideoX-5b-I2V"
+train_resolution: [49, 480, 720]   # frames, height, width
+seed: 42
+
+# Optimization
+train_steps: 50001
+batch_size: 3
+gradient_accumulation_steps: 1
+learning_rate: 2.0e-4
+optimizer: "adamw"
+beta1: 0.9
+beta2: 0.95
+epsilon: 1.0e-8
+weight_decay: 1.0e-4
+max_grad_norm: 1.0
+lr_scheduler: "constant_with_warmup"
+lr_warmup_steps: 100
+mixed_precision: "bf16"
+gradient_checkpointing: true
+
+# LoRA on the attention projections
+rank: 64
+lora_alpha: 64
+target_modules: ["to_k", "to_q", "to_v", "to_out.0"]
+
+# Checkpoints, data loading, logging. A checkpoint holds the training state
+# (about 0.8 GB); the newest checkpointing_limit are kept. To resume a run, add
+# resume_from_checkpoint: runs/train/cogvideox/<run_name>/checkpoints/checkpoint-<step>
+checkpointing_steps: 500
+checkpointing_limit: 110
+num_workers: 2
+pin_memory: true
+report_to: "tensorboard"
+
+trajloc:
+  video_size: [480, 720]           # height, width
+  num_frames: 49
+  # Appearance encoder: one token per object, from the frame-0 latent
+  appearance_latent_size: [60, 90]
+  appearance_latent_depth: 8
+  appearance_hidden_channels: 64
+  appearance_token_std: 0.15       # T5-XXL's token std
+  # Attention localization, in all 42 blocks
+  heatmap_sigma: 30.0              # pixels
+  # Loss: (1 - w) * mse + w * box-masked mse
+  box_loss_weight: 0.5
+  box_mask:
+    style: padded                  # each box extended in time
+    padding_frames: 8              # video frames before and after
+  training_set:
+    name: sav
+    root: "runs/preprocess/sav"

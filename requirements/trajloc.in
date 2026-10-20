@@ -1,0 +1,45 @@
+# TrajLoc's direct dependencies (the trajloc environment's spec).
+# requirements/trajloc.txt is the full pinned lock, frozen from the environment
+# the release ran in. A new lock from this file (a new environment: check that
+# the released models' outputs are unchanged with it before replacing the lock):
+#   uv pip compile --index-strategy unsafe-best-match --python-version 3.10 \
+#       --python-platform x86_64-manylinux2014 --emit-index-url requirements/trajloc.in
+# flash-attn is installed separately (it builds against torch): scripts/env/install.sh.
+--extra-index-url https://download.pytorch.org/whl/cu124
+torch==2.6.0
+torchvision==0.21.0
+torchaudio==2.6.0
+diffusers==0.37.1
+transformers==5.3.0
+accelerate==1.13.0
+peft==0.18.1
+huggingface-hub==1.7.2
+safetensors==0.7.0
+tokenizers==0.22.2
+sentencepiece==0.2.1
+modelscope==1.35.3
+easydict==1.13
+einops==0.8.2
+ftfy==6.3.1
+decord==0.6.0
+imageio==2.37.3
+imageio-ffmpeg==0.6.0
+numpy==1.26.4
+opencv-python==4.11.0.86
+pillow==12.1.1
+pandas==2.3.3
+scipy==1.15.3
+setuptools==80.10.2   # torch.utils.cpp_extension imports it at runtime
+pyyaml==6.0.3
+tqdm==4.67.3
+protobuf==7.34.1
+pydantic==2.12.5
+deepspeed==0.18.8
+av==17.0.1
+sam-2 @ git+https://github.com/facebookresearch/sam2@2b90b9f5ceec907a1c18123530e92e794ad901a4
+hydra-core==1.3.2
+iopath==0.1.10
+omegaconf==2.3.0
+pycocotools==2.0.11
+pyarrow==16.1.0
+tensorboard==2.21.0   # CogVideoX training logs (report_to: tensorboard)

@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "TrajLoc: Trajectory-Attention Localization for Multi-Object Motion Control"
+type: software
+version: 1.0.0
+date-released: 2026-11-01
+license: Apache-2.0
+repository-code: "https://github.com/Sela-Omer/traj-loc"
+url: "https://sela-omer.github.io/traj-loc/"
+authors:
+  - family-names: Sela
+    affiliation: "Amazon Prime Video; Tel Aviv University"
+    given-names: Omer
+  - family-names: Huberman-Spiegelglas
+    affiliation: "Amazon Prime Video"
+    given-names: Inbar
+  - family-names: Rotman
+    affiliation: "Amazon Prime Video"
+    given-names: Michael
+  - family-names: Benaim
+    affiliation: "Amazon Prime Video; Hebrew University of Jerusalem"
+    given-names: Sagie
+  - family-names: Ben-Cohen
+    affiliation: "Amazon Prime Video"
+    given-names: Avi
+preferred-citation:
+  type: conference-paper
+  title: "TrajLoc: Trajectory-Attention Localization for Multi-Object Motion Control"
+  authors:
+    - family-names: Sela
+      given-names: Omer
+    - family-names: Huberman-Spiegelglas
+      given-names: Inbar
+    - family-names: Rotman
+      given-names: Michael
+    - family-names: Benaim
+      given-names: Sagie
+    - family-names: Ben-Cohen
+      given-names: Avi
+  collection-title: "Advances in Neural Information Processing Systems"
+  year: 2026
+  notes: "To appear"
+  identifiers:
+    - type: doi
+      value: "10.48550/arXiv.2607.00861"
+  url: "https://arxiv.org/abs/2607.00861"

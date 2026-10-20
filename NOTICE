@@ -1,0 +1,25 @@
+TrajLoc
+https://github.com/Sela-Omer/traj-loc
+
+The code and the TrajLoc model weights are licensed under the Apache License 2.0
+(LICENSE). This repository also includes third-party material that is not
+covered by it and remains under its owners' terms:
+
+- assets/examples/goldfish, assets/examples/motorbike_trick, assets/examples/pigs
+  (first frames and tracks), and frames in assets/readme/comparison.webp and
+  assets/readme/method.webp: from the DAVIS dataset,
+  https://davischallenge.org/ (F. Perazzi et al., "A Benchmark Dataset and
+  Evaluation Methodology for Video Object Segmentation", CVPR 2016; J. Pont-Tuset
+  et al., "The 2017 DAVIS Challenge on Video Object Segmentation", arXiv 2017).
+
+- assets/examples/boats (first frame and tracks): from MoveBench,
+  https://huggingface.co/datasets/Ruihang/MoveBench (MIT); its source video is
+  from Pexels, https://www.pexels.com/license/.
+
+- The SVG images in assets/readme/ embed subsets of the Inter typeface,
+  Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter),
+  licensed under the SIL Open Font License, Version 1.1
+  (https://openfontlicense.org). The fonts remain under that license.
+
+- The badges in README.md and in the model cards show the NeurIPS, GitHub and
+  Hugging Face marks, which belong to their owners.
