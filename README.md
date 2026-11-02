@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://arxiv.org/abs/2607.00861"><img src="assets/readme/arxiv-badge.svg" height="28" alt="arXiv 2607.00861"/></a>
   <a href="https://sela-omer.github.io/traj-loc/"><img src="assets/readme/project-badge.svg" height="28" alt="Project page"/></a>
-  <a href="#models"><img src="assets/readme/models-badge.svg" height="28" alt="Models on Hugging Face"/></a>
+  <a href="https://huggingface.co/collections/Omer-Sela/trajloc-neurips-2026"><img src="assets/readme/models-badge.svg" height="28" alt="Models on Hugging Face"/></a>
   <a href="https://neurips.cc/"><img src="assets/readme/neurips-badge.svg" height="28" alt="NeurIPS 2026"/></a>
 </p>
 
