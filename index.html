@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrajLoc — NeurIPS 2026</title>
+  <meta name="description" content="A NeurIPS 2026 paper on per-object attention localization for multi-object motion control in image-to-video diffusion, across CogVideoX-5B and WaN 2.1-14B." />
+  <link rel="canonical" href="https://sela-omer.github.io/traj-loc/" />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="TrajLoc — NeurIPS 2026" />
+  <meta property="og:description" content="A NeurIPS 2026 paper on per-object attention localization for multi-object motion control in image-to-video diffusion." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="TrajLoc" />
+  <meta property="og:url" content="https://sela-omer.github.io/traj-loc/" />
+  <meta property="og:image" content="https://sela-omer.github.io/traj-loc/og-image-neurips-2026.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="TrajLoc — NeurIPS 2026" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TrajLoc — NeurIPS 2026" />
+  <meta name="twitter:description" content="A NeurIPS 2026 paper on per-object attention localization for multi-object motion control in image-to-video diffusion." />
+  <meta name="twitter:image" content="https://sela-omer.github.io/traj-loc/og-image-neurips-2026.png" />
+  <meta name="twitter:image:alt" content="TrajLoc, NeurIPS 2026" />
+
+  <!-- Structured data: describes the paper for search engines / scholarly indexers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "TrajLoc: Trajectory-Attention Localization for Multi-Object Motion Control",
+    "name": "TrajLoc: Trajectory-Attention Localization for Multi-Object Motion Control",
+    "abstract": "Controlling the motion of multiple objects in image-to-video generation requires preserving object identities while enforcing adherence to distinct target trajectories. This becomes increasingly hard as objects multiply and their paths intersect or occlude. Existing approaches entangle multiple trajectories within a shared dense conditioning signal, making object-level correspondence difficult to preserve in crowded scenes. TrajLoc enforces a strict, per-object spatial constraint directly within the attention layers by substituting the cross-attention weights of each object token with a Gaussian heatmap centered on its target location at every frame. The same per-object token interface carries each trajectory through a learned embedding, and preserves identity by encoding first-frame appearance in place of an object token. We apply our method to two architecturally distinct backbones (CogVideoX-5B and WaN 2.1-14B).",
+    "author": [
+      { "@type": "Person", "name": "Omer Sela", "url": "https://github.com/Sela-Omer" },
+      { "@type": "Person", "name": "Inbar Huberman-Spiegelglas", "url": "https://scholar.google.com/citations?user=YG_1cdEAAAAJ&hl=en" },
+      { "@type": "Person", "name": "Michael Rotman", "url": "https://scholar.google.com/citations?user=tzlpNi8AAAAJ&hl=en" },
+      { "@type": "Person", "name": "Sagie Benaim", "url": "https://sagiebenaim.github.io/" },
+      { "@type": "Person", "name": "Avi Ben-Cohen", "url": "https://scholar.google.com/citations?user=mGVCafYAAAAJ&hl=iw" }
+    ],
+    "datePublished": "2026",
+    "keywords": "NeurIPS 2026, image-to-video generation, motion control, trajectory conditioning, cross-attention, diffusion models, CogVideoX, Wan 2.1",
+    "image": "https://sela-omer.github.io/traj-loc/og-image-neurips-2026.png",
+    "isPartOf": {
+      "@type": "CreativeWorkSeries",
+      "name": "Advances in Neural Information Processing Systems (NeurIPS 2026)",
+      "alternateName": "NeurIPS 2026",
+      "url": "https://neurips.cc/"
+    },
+    "identifier": { "@type": "PropertyValue", "propertyID": "arXiv", "value": "arXiv:2607.00861" },
+    "sameAs": "https://arxiv.org/abs/2607.00861",
+    "url": "https://sela-omer.github.io/traj-loc/"
+  }
+  </script>
+
+  <!-- WebSite schema: gives Google an explicit site name (the grey label under
+       the result), which for a github.io project subdomain otherwise falls back
+       to the hostname root (a 404 branded "GitHub Pages"). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "TrajLoc",
+    "url": "https://sela-omer.github.io/traj-loc/"
+  }
+  </script>
+
+  <!-- favicons: SVG primary, .ico fallback, apple-touch for iOS home screen -->
+  <link rel="icon" type="image/svg+xml" href="/traj-loc/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/traj-loc/favicon.ico" />
+  <link rel="apple-touch-icon" href="/traj-loc/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script type="module" crossorigin src="/traj-loc/assets/index-CnZh02xV.js"></script>
+  <link rel="stylesheet" crossorigin href="/traj-loc/assets/index-D7WWjAru.css">
+</head>
+<body>
+  <div id="root"></div>
+</body>
+</html>
